@@ -1,0 +1,18 @@
+Shift Gears is a new server for ShiftOS 1.0.
+
+Currently focusing on the available source and binary of 1.0 Beta 2.5.2
+but ultimately it would be nice to support as many client versions as
+possible.
+
+To run it you need a config.json file that looks something like
+
+```
+{
+	"dbaddr": "mysql://root:password@localhost/shiftos"
+}
+```
+
+dependencies: sqlalchemy, twisted, flask, netfleece
+You need a WSGI Web server to run unite.wsgi for the Unite server.
+You can just execute server.py to run the MUD server.
+

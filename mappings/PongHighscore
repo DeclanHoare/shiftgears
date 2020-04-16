@@ -1,0 +1,3 @@
+UserId < ID
+Level < PongLevel
+CodepointsCashout < PongCP
