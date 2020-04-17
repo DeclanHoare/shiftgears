@@ -155,8 +155,8 @@ def get_display_name(uid, dbsession, authsession):
 def get_pong_highscores(dbsession, authsession):
 	return flask.jsonify({"Pages": 0, # unused
 		"Highscores": [mapping.map_to(user, mappings["PongHighscore"])
-			for user in dbsession.query(User).all()
-			if user.PongLevel is not None and user.PongCP is not None]})
+			for user in dbsession.query(User).filter(User.PongLevel.isnot(None)).filter(User.PongCP.isnot(None))
+			.order_by(User.PongCP.desc()).all()]})
 
 @api_route("/GetEmail")
 def get_email(dbsession, authsession):
