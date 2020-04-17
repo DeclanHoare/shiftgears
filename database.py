@@ -17,7 +17,7 @@ from myconfig import config, mappings
 
 Base = declarative_base()
 
-engine = create_engine(config["dbaddr"])
+engine = create_engine(config["dbaddr"], pool_recycle = 3600)
 DbSession = sessionmaker(bind = engine)
 
 class ValidationError(Exception):
